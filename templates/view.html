@@ -1,0 +1,46 @@
+{%include 'admin_header.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>resteamview</title>
+</head>
+<body><br><br><br><br><br>
+    <h3 align="center" font color="red">Research Team</h3>
+    <center>
+    <table class="table" style="width: 1200px;">
+        <tr>
+            <thead class="table-secondary">
+            <th>Research Team Name</th>
+            <th>Place</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Liscence No</th>
+            <th>est Year</th>
+            <th>Founder</th>
+            <th>Vission_Mission</th>
+            <th>STATUS</th>
+            </thead>
+        </tr>
+        <tr id="ty">
+        {% for i in data['view'] %}
+        <tr>
+            <td>{{i['res_team_name']}}</td>
+            <td>{{i['place']}}</td>
+            <td>{{i['phone']}}</td>
+            <td>{{i['email']}}</td>
+            <td>{{i['lsc_no']}}</td>
+            <td>{{i['est_year']}}</td>
+            <td>{{i['founder']}}</td>
+            <td>{{i['vission_mission']}}</td>
+            <td>{{i['utype']}}</td>
+            <td><a href="?action=verify&id={{i['login_id']}}" class="btn btn-success">Accept</a></td>
+            <td><a href="?action=reject&id={{i['login_id']}}" class="btn btn-danger">Reject</a></td>
+         </tr>
+         {% endfor %}
+    </table>
+</body></center>
+</html>
+
+{%include 'footer.html'%}

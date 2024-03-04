@@ -1,0 +1,36 @@
+{% include 'resteam_header.html'%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><br><br><br><br><br>
+    <center>
+        <h3>Complaints</h3>
+    <table class="table" style="width: 900px;">
+        <tr>
+            <thead class="table-secondary">
+            <th>Title</th>
+            <th>Complaint Description</th>
+            <th>Reply</th>
+            <th>Date</th>
+            </thead>
+        </tr>
+        <tr id="ty">
+        {%  for i in data['view'] %}
+        <tr>
+            <td>{{i['title']}}</td>
+            <td>{{i['comp_desc']}}</td>
+            <td>{{i['reply']}}</td>
+            <td>{{i['date']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </center>
+</body>
+</html>
+
+{%include 'footer.html'%}

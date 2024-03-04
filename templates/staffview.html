@@ -1,0 +1,43 @@
+{%include 'admin_header.html'%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><br><br><br><br>
+    <h3 font color="red" align="center">Staff Details</h3>
+    <center>
+    <table class="table" style="width: 1200px;">
+        <tr>
+            <thead class="table-secondary">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Place</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Liscence No</th>
+            <th>Designation</th>
+            </thead>
+        </tr>
+        <tr id="ty">
+         {% for i in data['staffview'] %}
+         <tr>
+            <td>{{i['fname']}}</td>
+            <td>{{i['lname']}}</td>
+            <td>{{i['place']}}</td>
+            <td>{{i['phone']}}</td>
+            <td>{{i['email']}}</td>
+            <td>{{i['lsc_no']}}</td>
+            <td>{{i['desig']}}</td>
+            
+         </tr>
+        {% endfor %}
+    </table>
+    </center>
+</body>
+</html>
+
+{%include 'footer.html'%}

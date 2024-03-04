@@ -1,0 +1,31 @@
+{% include 'resteam_header.html'%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><br><br><br><br>
+    <center>
+    <h3>Notifications</h3>
+    <table class="table" style="width: 800px;">
+        <thead class="table-secondary">
+        <tr><th>Title</th>
+        <th>Description</th>
+    <th>Date</th></thead>
+</tr>
+<tr id="ty">
+    {% for i in data['notify'] %}
+    <tr>
+      <td>{{i['title']}}</td>
+      <td>{{i['description']}}</td>
+      <td>{{i['date']}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+    </center>
+</body>
+</html>
+{%include 'footer.html'%}
