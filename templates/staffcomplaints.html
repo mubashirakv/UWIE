@@ -1,7 +1,172 @@
 {% include 'staff_header.html'%}
 
-
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background: linear-gradient(#141e30,#243b55);
+      color:#ffff;
+      font-family: 'Roboto',sans-serif;
+
+    }
+    
+    #form-div{
+        background: rgba(0, 0, 0, .5);
+        width: 35%;
+        margin: auto;
+        border: 1px solid #16161d;
+        border-radius: 25px;
+    }
+    #survey-form{
+        width: 100%;
+        margin: auto;
+        line-height: 3rem;
+        font-size: 1rem;
+    }
+    input,select,option{
+        width: 100%;
+        height: 2.5rem;
+        border: 1px solid #282c35;
+        border-radius: 25px;
+    }
+    textarea{
+
+width: 100%;
+border-radius: 25px;
+}
+
+input:focus, select:focus, option:focus, button:focus, textarea:focus{
+     background-color: #808080;
+     color: #ffff;
+    outline: 3px solid invert;
+}
+input:hover, input:hover::placeholder { color: #ffff;
+
+}
+
+input:focus::placeholder{
+
+color: #ffff;
+
+} 
+label, input{
+
+display: flex; }
+
+.radio-set>input,
+
+.radio-set>label{
+
+display: inline-block;
+
+} 
+button{
+
+background-color: #25253c;
+
+color: #ffff;
+width: 100%;
+
+height: 3rem; border: 1px solid #282C35; border-radius: 15px;
+
+cursor: pointer;
+}
+
+sup{
+
+color: red;
+}
+/*Styling radio and check*/
+
+@supports(-webkit-appearance: none) or (-moz-appearance:none){
+input[type='radio'],
+input[type='checkbox'] {
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+}}
+input[type="radio"]{
+     height: 1.5rem;
+     width: 1.5rem;
+     background-color: #ffff;
+     border-radius: 50%; 
+     cursor: pointer;
+}
+input[type="radio"]:hover{
+     background-color: #5aaeed;
+}
+input[type="radio"]:checked{
+     background-color: #2e92f0;
+
+} 
+input[type="checkbox"]{
+    background-color: #ffff; 
+    max-height: 1.5rem;
+    max-width: 1.5rem;
+    border-radius: 10%; 
+    cursor: pointer;
+    float: left;
+    margin-top: 10px;
+}
+input[type="checkbox"]:hover{
+     background-color: #5aaeed;
+}
+input[type="checkbox"]:checked{
+     background-color: #2e92f0;
+}
+/** media queries */
+
+@media (max-width: 480px){ 
+
+#form-div{
+    width:15%;
+    margin:auto;
+}
+.check-group{
+    max-width: 90%;
+}
+}
+/* Classes/Ids */
+.center{
+text-align: center;
+}
+</style>
+</head> 
+
+<body><br><br><br><br><br>
+  
+<h1 id="title" class="center"> COMPLAINTS</h1>
+<div id="form-div">
+
+    <form action="" method="post">
+        <div class="group">
+            <label for="title" id="title"> </label>Title
+            <input type="text" name="title" />
+        </div>
+        <div class="group">
+            <label for="compdesc" id="compdesc"> </label>Description
+            <textarea name="compdesc" id="" cols="20" rows="8"></textarea>
+        </div>
+        <div class="group">
+            <label for="reply" id="reply"> </label>Reply
+            <input type="text" name="reply" />
+        </div>
+        <div class="group">
+            <label for="date" id="date"> </label>Date
+            <input type="date" name="date" />
+        </div><br>
+        <button type="submit" name="submit" id="submit">Submit</button>
+
+    </body>
+</center>
+<br><br><br><br><br><br><br><br><br><br><br>
+
+</html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -35,5 +200,4 @@
     </form>
 </body>
 
-</html>
-{%include 'footer.html'%}
+</html> -->

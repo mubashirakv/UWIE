@@ -8,38 +8,35 @@
   <title>Document</title>
   <style>
     body{
-      background: linear-gradient(#141e30,#243b55);
+      background: linear-gradient(#243b55);
       color:#ffff;
       font-family: 'Roboto',sans-serif;
 
     }
-    p,legend{
-        width: 100%;
-        white-space: normal;
-    }
+    
     #form-div{
         background: rgba(0, 0, 0, .5);
-        width: 35%;
+        width: 25%;
         margin: auto;
         border: 1px solid #16161d;
         border-radius: 25px;
     }
     #survey-form{
-        width: 100%;
+        width: 25%;
         margin: auto;
         line-height: 3rem;
         font-size: 1rem;
     }
     input,select,option{
-        width: 100%;
+        width: 50%;
         height: 2.5rem;
         border: 1px solid #282c35;
-        border-radius: 25px;
+        border-radius: 15px;
     }
     textarea{
 
-width: 100%;
-
+width: 50%;
+border-radius: 15px;
 }
 
 input:focus, select:focus, option:focus, button:focus, textarea:focus{
@@ -72,7 +69,7 @@ button{
 background-color: #25253c;
 
 color: #ffff;
-width: 100%;
+width: 25%;
 
 height: 3rem; border: 1px solid #282C35; border-radius: 15px;
 
@@ -127,10 +124,10 @@ input[type="checkbox"]:checked{
 
 #form-div{
     width:25%;
-    margin:auto;
+    margin: auto;
 }
 .check-group{
-    max-width: 90%;
+    max-width: 50%;
 }
 }
 /* Classes/Ids */
@@ -141,6 +138,9 @@ text-align: center;
 </head> 
 
 <body><br><br><br><br>
+    <center>
+       
+    <form action="" method="post">
   
         <!-- <h1 style="color: cadetblue;">Registration</h1>
         <form method="post">
@@ -199,12 +199,12 @@ text-align: center;
 
         <p id="description" class="center">Please fill all required fields</p>
         
-        <div id="form-div">
-        
-        <form action="" method="post">
+       
+     
          <div class="group">
+
         
-        <label for="resname" id="resname">Name
+        <label for="resname" id="resname">
         </label>
         
         <input type="text"
@@ -214,45 +214,45 @@ text-align: center;
     </div>
 
         <div class="group">
-        <label for="place" id="place"> </label>Place
-        <input type="text" name="place" placeholder="Place" required/>
+        <label for="place" id="place"> </label>
+        <input type="text"  pattern="[a-zA-Z ]+" title="Only Letters" name="place" placeholder="Place" required/>
         </div>
     <div class="group">
-        <label for="phone" id="phone"></label>Phone
-        <input type="tel" name="phone" placeholder="Enter Your Number" required/>
+        <label for="phone" id="phone"></label>
+        <input type="number" pattern="[0-9]{10}"  name="phone" placeholder="Enter Your Number" required/>
     </div>
     <div class="group">
-        <label for="email" id="email"></label>Email
-        <input type="email" name="email" placeholder="Enter Your Email" required/>
+        <label for="email" id="email"></label>
+        <input type="email" p title="Enter in Mail Format"  name="email" placeholder="Enter Your Email" required/>
     </div>
     <div class="group">
-        <label for="lscno" id="lscno"></label>Lsc No
+        <label for="lscno" id="lscno"></label>
         <input type="text" name="lscno" placeholder="Liscence No" required/>
     </div>
     <div class="group">
-        <label for="estyear" id="estyear"></label>Est Year
+        <label for="estyear" id="estyear"></label>
         <input type="year" name="estyear" placeholder="est Year" required/>
     </div>
     <div class="group">
-        <label for="founder" id="founder"></label>Founder
+        <label for="founder" id="founder"></label>
         <input type="text" name="founder" placeholder="Founder" required/>
     </div>
     <div class="group">
-        <label for="vm" id="vm"></label>Vission&Mission
+        <label for="vm" id="vm"></label>
         <input type="text" name="vm" placeholder="Vission & Mission" required/>
     </div>
     <div class="group">
-        <label for="uname" id="uname"></label>Username
-        <input type="text" name="uname" placeholder="Username" required/>
+        <label for="uname" id="uname"></label>
+        <input type="text" pattern="[a-zA-Z0-9 ]+" title="Not Allowed Character" name="uname" placeholder="Username" required/>
     </div>
     <div class="group">
-        <label for="pass" id="pass"></label>Password
-        <input type="password" name="pass" placeholder="Password" required/>
+        <label for="pass" id="pass"></label>
+        <input type="password" pattern="[a-zA-Z0-9 ]+" title="Not Allowed Character" name="pass" placeholder="Password" required/>
     </div><br>
+    
     <button type="submit" name="submit" id="submit">Register </button>
-</body>
+    </form>
 </center>
-<br><br><br><br><br><br><br><br><br><br><br>
+</body>
 
 </html>
-{%include 'footer.html'%}

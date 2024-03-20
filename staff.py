@@ -25,11 +25,23 @@ def uploadimage():
         path="static/"+str(uuid.uuid4())+image.filename
         image.save(path)
         description=request.form['desc']
-        eimage=request.form['eimg']
-        date=request.form['date']
-        qry="insert into uw_image values(null,'%s','%s','%s','%s','%s','%s')"%(session['lid'],title,path,description,eimage,date)
+        type=request.form['file_type']
+
+     
+        qry="insert into uw_image values(null,'%s','%s','%s','%s','pending','%s',curdate())"%(session['lid'],title,path,description,type)
         insert(qry)
     return render_template('uploadimage.html')
+
+
+@staff.route('/viewenhancedimg',methods=['post','get'])
+def viewenhacedimg():
+    data={}
+    qry="select * from uw_image"
+    res=select(qry)
+    data['view']=res
+    return render_template('viewenhancedimg.html')
+    
+
 
 
 @staff.route('/staffsendcomplaints',methods=['post','get'])

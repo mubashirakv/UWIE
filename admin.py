@@ -56,7 +56,7 @@ def updatereply():
         reply=request.form['reply']
         qry3="update complaints set reply='%s' where comp_id='%s'"%(reply,id)
         update(qry3)
-
+        return'''<script>alert('Reply Updated');window.location="/admin home"</script>'''
     return render_template('updatereply.html')
 
 @admin.route('/notifications',methods=['post','get'])

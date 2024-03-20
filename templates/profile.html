@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body><br><br><br><br><br>
+    <center>
     <h1>My Profile</h1>
     <form action="" methods="post">
-        <table border="1">
+        <table class="table" style="width: 1200px;">
             <tr>
+                <thead class="table-secondary">
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Place</th>
@@ -18,7 +20,10 @@
                 <th>Email</th>
                 <th>Liscence No</th>
                 <th>Designation</th>
+                </thead>
             </tr>
+
+            <tr id="ty"></tr>
             {% for i in data['view'] %}
             <tr>
                 <td>{{i['fname']}}</td>
@@ -31,6 +36,7 @@
             </tr>
             {% endfor %}
         </table>
-    </form>
+</form>
+</center>
 </body>
 </html>

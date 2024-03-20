@@ -1,0 +1,25 @@
+
+
+<table>
+    <tr>
+        <th>SLNO</th>
+        <th>STAFF NAME</th>
+        <th>IMAGE</th>
+        <th>DESCRIPTION</th>
+        <th>DATE</th>
+    </tr>
+    {%for i in data['view']%}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{i['res_team_name']}}</td>
+        <td><img src="{{i['uw_image']}}"  height="100px" width="100px" alt=""></td>
+        <td>{{i['description']}}</td>
+        <td>{{i['date']}}</td>
+        <td><a href="/process?id={{i['uw_image_id']}}&type={{i['type']}}&file={{i['uw_image']}}">Enhance</a></td>
+    </tr>
+    {%endfor%}
+</table>
+
+
+
+

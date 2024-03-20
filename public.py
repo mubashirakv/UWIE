@@ -6,7 +6,7 @@ public=Blueprint('public',__name__)
 @public.route('/')
 def home():
     return render_template('home.html')
-
+ 
 @public.route('/login',methods=['post','get'])
 def login():
     if 'submit' in request.form:
