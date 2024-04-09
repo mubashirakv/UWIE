@@ -39,7 +39,7 @@ def viewenhacedimg():
     qry="select * from uw_image"
     res=select(qry)
     data['view']=res
-    return render_template('viewenhancedimg.html')
+    return render_template('viewenhancedimg.html',data=data)
     
 
 

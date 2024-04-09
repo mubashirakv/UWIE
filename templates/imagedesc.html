@@ -25,9 +25,13 @@
         {% for i in data['view'] %}
         <tr>
             <td>{{i['title']}}</td>
-            <td>{{i['uw_image']}}</td>
+            <td><img src="{{i['uw_image']}}"  height="100px" width="100px" alt=""></td>
             <td>{{i['description']}}</td>
-            <td>{{i['enhanced_img']}}</td>
+            {%if i['type'] == 'image'%}
+            <td><img src="/{{i['enhanced_img']}}"  height="100px" width="100px" alt="page"></td>
+            {%elif i['type'] == 'video'%}
+            <video src="/{{i['enhanced_img']}}" controls></video>
+            {%endif%}
             <td>{{i['date']}}</td>
             
         </tr>

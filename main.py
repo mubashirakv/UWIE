@@ -12,4 +12,4 @@ app.register_blueprint(resteam)
 app.register_blueprint(staff)
 app.secret_key='3443'
 
-app.run(debug=True)
+app.run(debug=True,port=5005)

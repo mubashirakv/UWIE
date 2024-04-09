@@ -1,3 +1,4 @@
+{%include 'staff_header.html'%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,29 +6,43 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h1>Enhanced Image</h1>
-    <table>
+<body><br><br><br><br><br>
+    <center>
+    <h2>Enhanced Image</h2>
+    <table class="table" style="width: 1000px;">
         <tr>
+            <thead class="table-secondary">
             <th>Title</th>
             <th>Image</th>
             <th>Description</th>
             <th>Enhanced Image</th>
-            <th>Type</th>
+           
             <th>Date</th>
+            </thead>
         </tr>
         
             {% for i in data['view']%}
         <tr>
             <td>{{i['title']}}</td>
-            <td>{{i['uw_image']}}</td>
+            {%if i['type'] == 'image'%}  
+                <td><img src="{{i['uw_image']}}"  height="100px" width="100px" alt=""></td>
+            {%elif i['type'] == 'video'%}
+            <td><video src="/{{i['uw_image']}}" controls></video></td>
+            {%endif%}
+
             <td>{{i['description']}}</td>
-            <td>{{i['enhanced_img']}}</td>
-            <td>{{i['type']}}</td>
+            {%if i['type'] == 'image'%}
+            <td><img src="/{{i['enhanced_img']}}"  height="100px" width="100px" alt="page"></td>
+            {%elif i['type'] == 'video'%}
+            <td><video src="/{{i['enhanced_img']}}" controls></video></td>
+            {%endif%}
+            
             <td>{{i['date']}}</td>
 
         </tr>
         {%endfor%}
+        </center>
     </table>
 </body>
 </html>
+{%include'footer.html'%}
