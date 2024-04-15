@@ -8,7 +8,7 @@
   <title>Document</title>
   <style>
     body{
-      background: linear-gradient(#243b55,#141e23);
+      background: linear-gradient(#141e30,#243b55);
       color:#ffff;
       font-family: 'Roboto',sans-serif;
 
@@ -16,27 +16,27 @@
     
     #form-div{
         background: rgba(0, 0, 0, .5);
-        width: 25%;
+        width: 35%;
         margin: auto;
         border: 1px solid #16161d;
         border-radius: 25px;
     }
     #survey-form{
-        width: 25%;
+        width: 100%;
         margin: auto;
         line-height: 3rem;
         font-size: 1rem;
     }
     input,select,option{
-        width: 50%;
+        width: 100%;
         height: 2.5rem;
         border: 1px solid #282c35;
-        border-radius: 15px;
+        border-radius: 25px;
     }
     textarea{
 
-width: 50%;
-border-radius: 15px;
+width: 100%;
+border-radius: 25px;
 }
 
 input:focus, select:focus, option:focus, button:focus, textarea:focus{
@@ -69,7 +69,7 @@ button{
 background-color: #25253c;
 
 color: #ffff;
-width: 25%;
+width: 100%;
 
 height: 3rem; border: 1px solid #282C35; border-radius: 15px;
 
@@ -123,11 +123,11 @@ input[type="checkbox"]:checked{
 @media (max-width: 480px){ 
 
 #form-div{
-    width:25%;
-    margin: auto;
+    width:15%;
+    margin:auto;
 }
 .check-group{
-    max-width: 50%;
+    max-width: 90%;
 }
 }
 /* Classes/Ids */
@@ -137,10 +137,61 @@ text-align: center;
 </style>
 </head> 
 
-<body><br><br><br><br>
-    <center>
-       
+<body><br><br><br><br><br>
+<h1 id="title" class="center"> Registration</h1>
+<div id="form-div">
+
     <form action="" method="post">
+        <div class="group">
+            <label for="resname" id="resname"> </label>Research Team Name
+            <input type="text" pattern="[a-zA-Z ]+" title="Only Letters"  name="resname" />
+        </div>
+        <div class="group">
+            <label for="place" id="place"> </label>Place
+            <input type="text" pattern="[a-zA-Z ]+" title="Only Letters" name="place" />
+        </div>
+        <div class="group">
+            <label for="phone" id="phone"> </label>Phone
+            <input type="tel" pattern="[0-9]{10}" oninput="this.value=this.value.replace(/[^0-9]/g,'');" title="Only 10 Digit Number" name="phone" />
+        </div>
+        <div class="group">
+            <label for="email" id="email"> </label>Email
+            <input type="email" p title="Enter in Mail Format" name="email" />
+        </div>
+        <div class="group">
+            <label for="lscno" id="lscno"> </label>Liscence No
+            <input type="text" name="lscno" />
+        </div>
+        <div class="group">
+            <label for="estyear" id="estyear"> </label>Est Year
+            <input type="text"  name="estyear"/>
+        </div>
+        <div class="group">
+            <label for="founder" id="founder"> </label>Founder
+            <input type="text" pattern="[a-zA-Z ]+" title="Only Letters"  name="founder" />
+        </div>
+        <div class="group">
+            <label for="vm" id="vm"> </label>Vission&Mission
+            <input type="text" pattern="[a-zA-Z ]+" title="Only Letters"  name="vm" />
+        </div>
+        <div class="group">
+            <label for="uname" id="uname"> </label>Username
+            <input type="text" pattern="[a-zA-Z0-9 ]+" title="Not Allowed Character" name="uname" />
+        </div>
+        <div class="group">
+            <label for="pass" id="pass"> </label>Password
+            <input type="text" pattern="[a-zA-Z0-9 ]+" title="Not Allowed Character" name="pass" />
+        </div>
+        
+        <br>
+        <button type="submit" name="submit" id="submit">Register</button>
+
+    </body>
+</center>
+<br><br><br><br><br><br><br><br><br><br><br>
+
+</html>
+
   
         <!-- <h1 style="color: cadetblue;">Registration</h1>
         <form method="post">
@@ -195,7 +246,7 @@ text-align: center;
             </table>
         </form> -->
         
-        <h1 id="title" class="center"> REGISTERATION</h1>
+        <!-- <h1 id="title" class="center"> REGISTERATION</h1>
 
         <p id="description" class="center">Please fill all required fields</p>
         
@@ -255,4 +306,4 @@ text-align: center;
 </center>
 </body>
 
-</html>
+</html> -->
