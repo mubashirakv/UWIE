@@ -30,6 +30,7 @@ def uploadimage():
      
         qry="insert into uw_image values(null,'%s','%s','%s','%s','pending','%s',curdate())"%(session['lid'],title,path,description,type)
         insert(qry)
+        return'''<script>alert('Upload Successfull');window.location="/staffhome"</script>'''
     return render_template('uploadimage.html')
 
 
@@ -53,7 +54,7 @@ def sendcomp():
         date=request.form['date']
         qry1="insert into complaints values(null,'%s','%s','%s','%s','%s')"%(session['lid'],title,compdesc,reply,date)
         insert(qry1)
-        return'''<script>alert('Complaint Registered');window.location="/resteamhome"</script>'''
+        return'''<script>alert('Complaint Registered');window.location="/staffhome"</script>'''
     return render_template('staffcomplaints.html')
 
 @staff.route('/staffviewreply')

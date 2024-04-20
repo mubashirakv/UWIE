@@ -462,14 +462,14 @@ section {
   line-height: 60px;
   margin-bottom: 20px;
   text-transform: uppercase;
-  color: #052c3f;
+  color: #d9e4ea;
 }
 
 .about .content h3 {
   font-weight: 500;
   line-height: 32px;
   font-size: 24px;
-  color: #4d8090;
+  color: #062d39;
 }
 
 .about .content ul {
@@ -961,7 +961,7 @@ section {
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 600;
-  color: #052c3f;
+  color: #0f2067;
 }
 
 .pricing .box h4 {

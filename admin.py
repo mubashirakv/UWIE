@@ -68,6 +68,7 @@ def notifications():
 
         qry4="insert into notifications values(null,'%s','%s','%s')"%(title,desc,date)
         insert(qry4)
+        return'''<script>alert('Notification Send');window.location="/admin home"</script>'''
     return render_template('notifications.html')
 
 

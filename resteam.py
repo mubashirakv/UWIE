@@ -220,7 +220,8 @@ def correct_image(input_path, output_path):
 
     return cv2.imencode('.png', preview)[1].tobytes()
 
-def analyze_video(input_video_path, output_video_path=None):
+def analyze_video(input_video_path, output_video_path):
+    print("output_video_path : ",  output_video_path)
     cap = cv2.VideoCapture(input_video_path)
     fps = math.ceil(cap.get(cv2.CAP_PROP_FPS))
     frame_count = math.ceil(cap.get(cv2.CAP_PROP_FRAME_COUNT))
@@ -364,17 +365,28 @@ def process():
         except Exception as e:
             return f"Error processing image: {str(e)}"
     elif file_type == 'video':
-        output_path = os.path.join(app.config['UPLOAD_FOLDER']+"/"+str(id)+ 'corrected_video.mp4')  # Consistent naming
+        # output_path = os.path.join(app.config['UPLOAD_FOLDER']+"/"+str(id)+ 'corrected_video.mp4')  # Consistent naming
+        output_path = "static/uploads/"+"/"+str(id)+"corrected_video.mp4"
         try:
-            video_data = analyze_video(input_file, output_path)
-            process_video(video_data)
-            print(output_path,"pppppppppppppppppp")
-            print(input_file,"ooooooooooooooo")
-            print(video_data,"iiiiiiiiiiiiiiiiiiiiiiii")
-            # qry2="update uw_image set enhanced_img='%s' where uw_image_id='%s'"%(output_path,id)
-            # update(qry2)
-            # return'''<script>alert('Enhanced');window.location="/view_images"</script>'''
-            return send_from_directory(app.config['UPLOAD_FOLDER'], 'corrected_video.mp4', as_attachment=True)
+            from uw import vvddoo
+            aa=vvddoo(input_file,output_path)
+            if aa=="success":
+
+            # video_data = analyze_video(input_file, output_path)
+            # aa=process_video(video_data)
+            # if aa:
+            #     print("!"*100)
+            #     print("aa : ",aa)
+            #     print(output_path,"pppppppppppppppppp")
+            #     # print(input_file,"ooooooooooooooo")
+            #     print(video_data,"iiiiiiiiiiiiiiiiiiiiiiii")
+                pp=os.path.join(app.config['UPLOAD_FOLDER']+"/"+str(id)+ 'corrected_video.mp4')
+                
+                qry2="update uw_image set enhanced_img='%s' where uw_image_id='%s'"%(output_path,id)
+                update(qry2)
+                
+                return'''<script>alert('Enhanced');window.location="/view_images"</script>'''
+            # return send_from_directory(app.config['UPLOAD_FOLDER'], 'corrected_video.mp4', as_attachment=True)
         except Exception as e:
             return f"Error processing video: {str(e)}"
     else:

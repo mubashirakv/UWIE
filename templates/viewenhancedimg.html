@@ -6,12 +6,232 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body><br><br><br><br><br>
-    <center>
-    <h2>Enhanced Image</h2>
-    <table class="table" style="width: 1000px;">
+<body><style>
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: rgb(9,83,121);
+        background: rgb(46,157,196);
+        background: rgb(19,85,134);
+background: linear-gradient(90deg, rgba(19,85,134,1) 0%, rgba(12,106,100,1) 100%);
+        margin: 0;
+        padding: 0;
+
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    form {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 55%;
+        margin-top: 10px;
+        border-collapse: collapse;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    th,
+    td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    th {
+        background-color: #1b1750;
+        color: #ffffff;
+    }
+
+    tr:hover {
+        background-color: rgba(34, 31, 70, 0.108);
+    }
+
+    a {
+        text-decoration: none;
+        color: #3498db;
+        transition: color 0.3s;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: #2980b9;
+    }
+
+    /* Responsive styles */
+    @media only screen and (max-width: 600px) {
+        table {
+            width: 1200px;
+        }
+
+        th,
+        td {
+            display: block;
+            width: 100%;
+        }
+    }
+</style>
+<style>
+    body {
+        background-color: #2482a8;
+    }
+
+    /* Franklin's Container */
+    .fish {
+        width: 150px;
+        height: 100px;
+        animation: swim 7s infinite;
+    }
+
+    /* Franklin */
+    .fish-body {
+        position: relative;
+        margin-top: 30px;
+        margin-left: 40px;
+        background-color: orange;
+        border-radius: 50%;
+        width: 150px;
+        height: 100px;
+    }
+
+    .eye {
+        position: absolute;
+        margin-left: 100px;
+        margin-top: 20px;
+        z-index: 1;
+        background-color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+    }
+
+    .pupil {
+        position: absolute;
+        z-index: 2;
+        margin-left: 5px;
+        margin-top: 5px;
+        background-color: black;
+        border-radius: 50%;
+        height: 10px;
+        width: 10px;
+    }
+
+    .fin {
+        margin-top: -90px;
+        margin-left: -70px;
+        background-color: rgb(18, 18, 17);
+        border-radius: 50%;
+        transform: rotate(40deg);
+        width: 80px;
+        height: 50px;
+    }
+
+    .fin-bottom {
+        margin-top: -10px;
+        transform: rotate(-40deg);
+    }
+
+    /* Bubbles */
+    .bubbles {
+        position: absolute;
+        bottom: 0;
+        z-index: 5;
+        margin-right: 50px;
+        background-color: white;
+        border-radius: 50%;
+        opacity: 0.5;
+        width: 40px;
+        height: 40px;
+        animation: up 4s infinite;
+    }
+
+    .bubble-2 {
+        left: 350px;
+        animation: up 2s infinite;
+    }
+
+    .bubble-3 {
+        left: 750px;
+        opacity: 0.3;
+        animation: up 5s infinite;
+    }
+
+    .bubble-4 {
+        left: 1150px;
+        animation: up 6s infinite;
+    }
+
+    .bubble-5 {
+        left: 50px;
+        animation: up 5s infinite;
+    }
+
+    .bubble-6 {
+        left: 300px;
+        opacity: 0.3;
+        animation: up 3s infinite;
+    }
+
+    .bubble-7 {
+        left: 670px;
+        animation: up 4s infinite;
+    }
+
+    .bubble-8 {
+        left: 1050px;
+        opacity: 0.3;
+        animation: up 3s infinite;
+    }
+
+    /* Swim Animation */
+    @keyframes swim {
+        0% {
+            transform: translateY(-50px) translateX(0) rotate(30deg);
+        }
+        25% {
+            transform: translateY(50px) translateX(250px) rotate(20deg);
+        }
+        50% {
+            transform: translateY(100px) translateX(500px);
+        }
+        75% {
+            transform: translateY(50px) translateX(850px) rotate(-20deg);
+        }
+        100% {
+            transform: translateY(-170px) translateX(1200px) rotate(-40deg);
+        }
+    }
+
+    /* Bubbles Animation */
+    @keyframes up {
+        100% {
+            transform: translateY(-800px);
+        }
+    }
+</style>
+<body>
+    <center><br><br><br>
+   
+
+<div class="bubbles bubble-1"></div>
+<div class="bubbles bubble-5"></div>
+<div class="bubbles bubble-2"></div>
+<div class="bubbles bubble-6"></div>
+<div class="bubbles bubble-3"></div>
+<div class="bubbles bubble-7"></div>
+<div class="bubbles bubble-4"></div>
+<div class="bubbles bubble-8"></div>
+<center><br><br><br>
+    <h2><b><font color="white">Enhanced Images</center></font></h2></b>
+
+    <table>
         <tr>
-            <thead class="table-secondary">
+            <thead>
             <th>Title</th>
             <th>Image</th>
             <th>Description</th>
@@ -25,16 +245,19 @@
         <tr>
             <td>{{i['title']}}</td>
             {%if i['type'] == 'image'%}  
-                <td><img src="{{i['uw_image']}}"  height="100px" width="100px" alt=""></td>
+                <td><img src="{{i['uw_image']}}"  height="200px" width="400px" alt=""></td>
             {%elif i['type'] == 'video'%}
-            <td><video src="/{{i['uw_image']}}" controls></video></td>
+            <td><video src="/{{i['uw_image']}}"height="300px" width="400px" controls></video></td>
             {%endif%}
 
             <td>{{i['description']}}</td>
-            {%if i['type'] == 'image'%}
-            <td><img src="/{{i['enhanced_img']}}"  height="100px" width="100px" alt="page"></td>
+            {%if i['type'] == 'image'%} 
+            <td><img src="/{{i['enhanced_img']}}"  height="200px" width="400px" alt="page"></td>
             {%elif i['type'] == 'video'%}
-            <td><video src="/{{i['enhanced_img']}}" controls></video></td>
+            <td>
+                <a href="/{{i['enhanced_img']}}" download class="btn btn-primary">Download</a>
+            </td>
+           
             {%endif%}
             
             <td>{{i['date']}}</td>
@@ -45,4 +268,3 @@
     </table>
 </body>
 </html>
-{%include'footer.html'%}

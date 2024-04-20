@@ -7,13 +7,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image</title>
 </head>
-<body><br><br><br><br><br><br>
+<body><style>
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: rgb(9,83,121);
+        background: rgb(46,157,196);
+        background: rgb(19,85,134);
+background: linear-gradient(90deg, rgba(19,85,134,1) 0%, rgba(12,106,100,1) 100%);
+        margin: 0;
+        padding: 0;
+
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    form {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 85%;
+        margin-top: 10px;
+        border-collapse: collapse;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    th,
+    td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    th {
+        background-color: #1b1750;
+        color: #ffffff;
+    }
+
+    tr:hover {
+        background-color: rgba(34, 31, 70, 0.108);
+    }
+
+    a {
+        text-decoration: none;
+        color: #3498db;
+        transition: color 0.3s;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: #2980b9;
+    }
+
+    /* Responsive styles */
+    @media only screen and (max-width: 600px) {
+        table {
+            width: 1200px;
+        }
+
+        th,
+        td {
+            display: block;
+            width: 100%;
+        }
+    }
+</style><br><br><br><br><br>
     <center>
-    <h3>Images and Description</h3>
+        <h2><b><font color="white">Images And Description</font></h2></b>
     <form>
-        <table class="table" style="width: 1200px;">
+        <table>
         <tr>
-            <thead class="table-secondary">
+            
             <th>Title</th>
             <th>UW image</th>
             <th>Description</th>
@@ -25,12 +94,19 @@
         {% for i in data['view'] %}
         <tr>
             <td>{{i['title']}}</td>
-            <td><img src="{{i['uw_image']}}"  height="100px" width="100px" alt=""></td>
-            <td>{{i['description']}}</td>
             {%if i['type'] == 'image'%}
-            <td><img src="/{{i['enhanced_img']}}"  height="100px" width="100px" alt="page"></td>
+
+            <td><img src="{{i['uw_image']}}"  height="300px" width="400px" alt=""></td>
+            
+            <td>{{i['description']}}</td>
+            <td><img src="/{{i['enhanced_img']}}"  height="300px" width="400px" alt="page"></td>
+
             {%elif i['type'] == 'video'%}
-            <video src="/{{i['enhanced_img']}}" controls></video>
+            <td><video src="/{{i['uw_image']}}" style="height: 300px;width: 400px;" controls></video></td>
+            <td>{{i['description']}}</td>
+            <td><a href="/{{i['enhanced_img']}}" download class="btn btn-primary">Download</a></td>
+           
+
             {%endif%}
             <td>{{i['date']}}</td>
             
@@ -43,4 +119,3 @@
 
 </html>
 
-{%include 'footer.html'%}

@@ -6,163 +6,261 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
-    body{
-      background: linear-gradient(#141e30,#243b55);
-      color:#ffff;
-      font-family: 'Roboto',sans-serif;
+  <body><style>
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: rgb(9,83,121);
+        background: rgb(46,157,196);
+        background: rgb(19,85,134);
+background: linear-gradient(90deg, rgba(19,85,134,1) 0%, rgba(12,106,100,1) 100%);
+        margin: 0;
+        padding: 0;
 
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
     }
-    
-    #form-div{
-        background: rgba(0, 0, 0, .5);
-        width: 35%;
-        margin: auto;
-        border: 1px solid #16161d;
-        border-radius: 25px;
-    }
-    #survey-form{
+
+    form {
         width: 100%;
-        margin: auto;
-        line-height: 3rem;
-        font-size: 1rem;
+        overflow-x: auto;
     }
-    input,select,option{
-        width: 100%;
-        height: 2.5rem;
-        border: 1px solid #282c35;
-        border-radius: 25px;
+
+    table {
+        width: 45%;
+        margin-top: 10px;
+        border-collapse: collapse;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
     }
-    textarea{
 
-width: 100%;
-border-radius: 25px;
-}
+    th,
+    td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+    }
 
-input:focus, select:focus, option:focus, button:focus, textarea:focus{
-     background-color: #808080;
-     color: #ffff;
-    outline: 3px solid invert;
-}
-input:hover, input:hover::placeholder { color: #ffff;
+    th {
+        background-color: #1b1750;
+        color: #ffffff;
+    }
+    button{
+        background-color: #1b1750;
+        color: #ffffff;
+    }
+    tr:hover {
+        background-color: rgba(34, 31, 70, 0.108);
+    }
 
-}
+    a {
+        text-decoration: none;
+        color: #3498db;
+        transition: color 0.3s;
+        font-weight: bold;
+    }
 
-input:focus::placeholder{
+    a:hover {
+        color: #2980b9;
+    }
 
-color: #ffff;
+    /* Responsive styles */
+    @media only screen and (max-width: 600px) {
+        table {
+            width: 1200px;
+        }
 
-} 
-label, input{
-
-display: flex; }
-
-.radio-set>input,
-
-.radio-set>label{
-
-display: inline-block;
-
-} 
-button{
-
-background-color: #25253c;
-
-color: #ffff;
-width: 100%;
-
-height: 3rem; border: 1px solid #282C35; border-radius: 15px;
-
-cursor: pointer;
-}
-
-sup{
-
-color: red;
-}
-/*Styling radio and check*/
-
-@supports(-webkit-appearance: none) or (-moz-appearance:none){
-input[type='radio'],
-input[type='checkbox'] {
-appearance: none;
--webkit-appearance: none;
--moz-appearance: none;
-}}
-input[type="radio"]{
-     height: 1.5rem;
-     width: 1.5rem;
-     background-color: #ffff;
-     border-radius: 50%; 
-     cursor: pointer;
-}
-input[type="file"]:hover{
-     background-color: #5aaeed;
-}
-input[type="radio"]:checked{
-     background-color: #2e92f0;
-
-} 
-input[type="checkbox"]{
-    background-color: #ffff; 
-    max-height: 1.5rem;
-    max-width: 1.5rem;
-    border-radius: 10%; 
-    cursor: pointer;
-    float: left;
-    margin-top: 10px;
-}
-input[type="checkbox"]:hover{
-     background-color: #5aaeed;
-}
-input[type="checkbox"]:checked{
-     background-color: #2e92f0;
-}
-/** media queries */
-
-@media (max-width: 480px){ 
-
-#form-div{
-    width:15%;
-    margin:auto;
-}
-.check-group{
-    max-width: 90%;
-}
-}
-/* Classes/Ids */
-.center{
-text-align: center;
-}
+        th,
+        td {
+            display: block;
+            width: 100%;
+        }
+    }
 </style>
-</head> 
+<style>
+    body {
+        background-color: #2482a8;
+    }
 
-<body><br><br><br><br><br>
-    <h1 id="title" class="center">Upload Image</h1>
-    <div id="form-div">
-    
+    /* Franklin's Container */
+    .fish {
+        width: 150px;
+        height: 100px;
+        animation: swim 7s infinite;
+    }
+
+    /* Franklin */
+    .fish-body {
+        position: relative;
+        margin-top: 30px;
+        margin-left: 40px;
+        background-color: orange;
+        border-radius: 50%;
+        width: 150px;
+        height: 100px;
+    }
+
+    .eye {
+        position: absolute;
+        margin-left: 100px;
+        margin-top: 20px;
+        z-index: 1;
+        background-color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+    }
+
+    .pupil {
+        position: absolute;
+        z-index: 2;
+        margin-left: 5px;
+        margin-top: 5px;
+        background-color: black;
+        border-radius: 50%;
+        height: 10px;
+        width: 10px;
+    }
+
+    .fin {
+        margin-top: -90px;
+        margin-left: -70px;
+        background-color: rgb(18, 18, 17);
+        border-radius: 50%;
+        transform: rotate(40deg);
+        width: 80px;
+        height: 50px;
+    }
+
+    .fin-bottom {
+        margin-top: -10px;
+        transform: rotate(-40deg);
+    }
+
+    /* Bubbles */
+    .bubbles {
+        position: absolute;
+        bottom: 0;
+        z-index: 5;
+        margin-right: 50px;
+        background-color: white;
+        border-radius: 50%;
+        opacity: 0.5;
+        width: 40px;
+        height: 40px;
+        animation: up 4s infinite;
+    }
+
+    .bubble-2 {
+        left: 350px;
+        animation: up 2s infinite;
+    }
+
+    .bubble-3 {
+        left: 750px;
+        opacity: 0.3;
+        animation: up 5s infinite;
+    }
+
+    .bubble-4 {
+        left: 1150px;
+        animation: up 6s infinite;
+    }
+
+    .bubble-5 {
+        left: 50px;
+        animation: up 5s infinite;
+    }
+
+    .bubble-6 {
+        left: 300px;
+        opacity: 0.3;
+        animation: up 3s infinite;
+    }
+
+    .bubble-7 {
+        left: 670px;
+        animation: up 4s infinite;
+    }
+
+    .bubble-8 {
+        left: 1050px;
+        opacity: 0.3;
+        animation: up 3s infinite;
+    }
+
+    /* Swim Animation */
+    @keyframes swim {
+        0% {
+            transform: translateY(-50px) translateX(0) rotate(30deg);
+        }
+        25% {
+            transform: translateY(50px) translateX(250px) rotate(20deg);
+        }
+        50% {
+            transform: translateY(100px) translateX(500px);
+        }
+        75% {
+            transform: translateY(50px) translateX(850px) rotate(-20deg);
+        }
+        100% {
+            transform: translateY(-170px) translateX(1200px) rotate(-40deg);
+        }
+    }
+
+    /* Bubbles Animation */
+    @keyframes up {
+        100% {
+            transform: translateY(-800px);
+        }
+    }
+</style>
+<body>
+    <center><br><br>
+   
+<div class="fish">
+    <div class="fish-body">
+        <div class="eye">
+            <div class="pupil"></div>
+        </div>
+    </div>
+    <div class="fin"></div>
+    <div class="fin fin-bottom"></div>
+</div>
+
+<div class="bubbles bubble-1"></div>
+<div class="bubbles bubble-5"></div>
+<div class="bubbles bubble-2"></div>
+<div class="bubbles bubble-6"></div>
+<div class="bubbles bubble-3"></div>
+<div class="bubbles bubble-7"></div>
+<div class="bubbles bubble-4"></div>
+<div class="bubbles bubble-8"></div>
+<center>
+    <h2><b><font color="white">Upload Image</center></font></h2>
+    <center>
         <form action="" method="post" enctype="multipart/form-data">
 
-            <div class="group">
-                <label for="file_type">File Type:</label>
-                <select id="file_type" name="file_type">
+            <table><tr><th>
+                File Type</th>
+                <td><select id="file_type" name="file_type">
                     <option value="image">Image</option>
                     <option value="video">Video</option>
-                </select><br><br>
-            </div>
+                </select><br><br></td></tr>
+            
 
-            <div class="group">
-                <label for="title" id="title"> </label>Title
-                <input type="text" name="title" />
-            </div>  
-            <div><input type="file" name="img" id=""></div> 
-            <div class="group">
-                <label for="desc" id="desc"> </label>Description
-                <textarea name="desc" id="" cols="20" rows="8"></textarea>
-            </div>
+           <tr><th>Title</th>
+               <td><input type="text" name="title" /></td> </tr>
+        
+            <td><input type="file" name="img" id=""></td> 
+            <tr>
+                <th>Description</th>
+                <td><textarea name="desc" id="" cols="20" rows="8"></textarea></td></tr>
 
           
-            <button type="submit" name="submit" id="submit">Upload</button>
+            <td><button type="submit" name="submit" id="submit">Upload</button></td>
 
 <!-- <!DOCTYPE html>
 <html lang="en">

@@ -15,156 +15,95 @@
 </body>
 </html> -->
 {%include 'admin_header.html'%}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    body{
-      background: linear-gradient(#141e30,#243b55);
-      color:#ffff;
-      font-family: 'Roboto',sans-serif;
+<style>
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: rgb(9,83,121);
+        background: rgb(46,157,196);
+        background: rgb(19,85,134);
+background: linear-gradient(90deg, rgba(19,85,134,1) 0%, rgba(12,106,100,1) 100%);
+        margin: 0;
+        padding: 0;
 
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
     }
-    #form-div{
-        background: rgba(0, 0, 0, .5);
+
+    form {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    table {
         width: 35%;
-        margin: auto;
-        border: 1px solid #16161d;
-        border-radius: 25px;
+        margin-top: 20px;
+        border-collapse: collapse;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        background-color: #ececf5;
+        border-radius: 8px;
+        overflow: hidden;
     }
-    #survey-form{
-        width: 100%;
-        margin: auto;
-        line-height: 3rem;
-        font-size: 1rem;
+
+    th,
+    td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
     }
-    input,select,option{
-        width: 100%;
-        height: 2.5rem;
-        border: 1px solid #282c35;
-        border-radius: 25px;
+
+    th {
+        background-color: #0f0b3fec;
+        color: #ffffff;
     }
-    textarea{
 
-width: 100%;
-border-radius: 25px;
-}
+    tr:hover {
+        background-color: rgba(34, 31, 70, 0.108);
+    }
+    button {
+        background-color: #0f0b3fed;
+        color: #ffffff;
+    }
+    a {
+        text-decoration: none;
+        color: #3498db;
+        transition: color 0.3s;
+        font-weight: bold;
+    }
 
-input:focus, select:focus, option:focus, button:focus, textarea:focus{
-     background-color: #808080;
-     color: #ffff;
-    outline: 3px solid invert;
-}
-input:hover, input:hover::placeholder { color: #ffff;
+    a:hover {
+        color: #2980b9;
+    }
 
-}
+    /* Responsive styles */
+    @media only screen and (max-width: 600px) {
+        table {
+            width: 1000px;
+        }
 
-input:focus::placeholder{
-
-color: #ffff;
-
-} 
-label, input{
-
-display: flex; }
-
-.radio-set>input,
-
-.radio-set>label{
-
-display: inline-block;
-
-} 
-button{
-
-background-color: #25253c;
-
-color: #ffff;
-width: 100%;
-
-height: 3rem; border: 1px solid #282C35; border-radius: 15px;
-
-cursor: pointer;
-}
-
-sup{
-
-color: red;
-}
-/*Styling radio and check*/
-
-@supports(-webkit-appearance: none) or (-moz-appearance:none){
-input[type='radio'],
-input[type='checkbox'] {
-appearance: none;
--webkit-appearance: none;
--moz-appearance: none;
-}}
-input[type="radio"]{
-     height: 1.5rem;
-     width: 1.5rem;
-     background-color: #ffff;
-     border-radius: 50%; 
-     cursor: pointer;
-}
-input[type="radio"]:hover{
-     background-color: #5aaeed;
-}
-input[type="radio"]:checked{
-     background-color: #2e92f0;
-
-} 
-input[type="checkbox"]{
-    background-color: #ffff; 
-    max-height: 1.5rem;
-    max-width: 1.5rem;
-    border-radius: 10%; 
-    cursor: pointer;
-    float: left;
-    margin-top: 10px;
-}
-input[type="checkbox"]:hover{
-     background-color: #5aaeed;
-}
-input[type="checkbox"]:checked{
-     background-color: #2e92f0;
-}
-/** media queries */
-
-@media (max-width: 480px){ 
-
-#form-div{
-    width:15%;
-    margin:auto;
-}
-.check-group{
-    max-width: 90%;
-}
-}
-/* Classes/Ids */
-.center{
-text-align: center;
-}
+        th,
+        td {
+            display: block;
+            width: 100%;
+        }
+    }
 </style>
 </head> 
 
-<body><br><br><br><br><br>
-  <h1 id="title" class="center">Send Reply</h1>
-<div id="form-div">
-
-    <form action="" method="post">
-        <div class="group">
-            <label for="reply" id="reply"> </label>Reply
-            <textarea name="reply" id="" cols="30" rows="10"></textarea><br>
+<body><br><br><br><br><br><br><br>
+    <h2><center><b><font color="white">Send Reply</center></font></h2></b>
+ <form action="" method="post">
+    <center>
+    <table>
+        <tr>
+         <th>Reply</th>
+           <td><textarea name="reply" id="" cols="50" rows="10"></textarea><br></td></tr>
         
-        <button type="submit" name="reply" id="submit">Send</button>
+        <td colspan="2" align="center"><button type="submit" name="reply" id="submit">Send</button>
 
     </body>
 </center>
-<br><br><br><br><br><br><br><br><br><br><br>
+
 
 </html>
 
